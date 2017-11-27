@@ -15,8 +15,8 @@ def get_coor_list(lat_min,lat_max,lon_min,lon_max):
         while lon <lon_max :
             coordinate = (lat,lon)
             area.append(coordinate)
-            lon +=0.1
-        lat += 0.1
+            lon += 0.05
+        lat += 0.05
     return area
 
 def get_city_coor(city):
@@ -110,7 +110,7 @@ if __name__ == '__main__':
             lon = str(i[1])
             lat = str(i[0])
             # print lon,type(lon),lat
-            url = 'https://a.mapillary.com/v3/images?client_id=ekcyWUdPNnkwSlRrMThjMVhWTFV0dzphYjRiMmE0MzM3YzQzMTAy&lookat=%s,%s&closeto=%s,%s&start_time=%s&end_time=%s&radius=10000'
+            url = 'https://a.mapillary.com/v3/images?client_id=ekcyWUdPNnkwSlRrMThjMVhWTFV0dzphYjRiMmE0MzM3YzQzMTAy&lookat=%s,%s&closeto=%s,%s&start_time=%s&end_time=%s&radius=2775'
             url = url % (lon, lat, lon, lat, start_time, end_time)
             print url
             res = requests.get(url)
